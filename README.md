@@ -1,11 +1,7 @@
 
 # easy_date_renamer
 
-[![Latest Release](https://gitlab.com/PolySandbox/python-project-template/-/badges/release.svg)](https://gitlab.com/PolySandbox/python-project-template/-/releases)
-[![pipeline status](https://gitlab.com/PolySandbox/python-project-template/badges/main/pipeline.svg)](https://gitlab.com/PolySandbox/python-project-template/-/commits/main)
-[![coverage report](https://gitlab.com/PolySandbox/python-project-template/badges/main/coverage.svg)](https://gitlab.com/PolySandbox/python-project-template/-/commits/main)
-
-project_description
+A simple and efficient script to automatically rename photos and videos based on their date metadata. Easily organize your media files by timestamp for better sorting and accessibility.
 
 ## Récupération de l'environnement de dev
 
@@ -41,18 +37,6 @@ Ou tout simplement installer le package:
 
 ```bash
 pip install .
-```
-
-## Installation du package depuis pypi registery
-
-```bash
-pip install project-name --index-url https://gitlab.com/api/v4/projects/62863242/packages/pypi/simple
-```
-
-## Installation du package depuis docker registery
-
-```bash
-TODO
 ```
 
 ## Utilisation du package dans un autre projet

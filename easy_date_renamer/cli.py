@@ -20,9 +20,11 @@ Usage:
 
 import argparse
 import logging
+import sys
 
 from colorama import Fore, Style, init
 
+from easy_date_renamer.base import rename_and_copy_files
 from easy_date_renamer.utils import read
 
 
@@ -59,6 +61,22 @@ def main():
     # Ajout d'une option pour le mode verbeux
     parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose mode")
 
+    # Add arguments for source and destination directories with default values
+    parser.add_argument(
+        "source_dir",
+        nargs="?",
+        default="./input",
+        type=str,
+        help="Path to the source directory (default: ./input)",
+    )
+    parser.add_argument(
+        "dest_dir",
+        nargs="?",
+        default="./output",
+        type=str,
+        help="Path to the destination directory (default: ./output)",
+    )
+
     # Analyser les arguments de la ligne de commande
     args = parser.parse_args()
 
@@ -73,8 +91,18 @@ def main():
     else:
         logging.getLogger().setLevel(logging.INFO)
 
-    # Code de l'application principale
-    logging.info("Bienvenue sur easy_date_renamer %s", version)
+    # Main application logic
+    logging.info("Welcome to easy_date_renamer %s", version)
+    logging.info("Source directory: %s", args.source_dir)
+    logging.info("Destination directory: %s", args.dest_dir)
+
+    try:
+        rename_and_copy_files(args.source_dir, args.dest_dir)
+    except OSError as e:
+        logging.error("An error occurred: %s", str(e))
+        sys.exit(1)
+
+    sys.exit(0)
 
 
 if __name__ == "__main__":
