@@ -1,0 +1,15 @@
+# mypy configurations
+[tool.mypy]
+ignore_missing_imports = true
+
+# flake8 configurations
+[tool.flake8]
+max-line-length = 100
+exclude = [".venv"]
+
+# black configurations
+[tool.black]
+line-length = 100
+
+[tool.coverage.report]
+omit = ["easy_date_renamer/cli.py"]

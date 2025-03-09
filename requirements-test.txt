@@ -1,0 +1,14 @@
+# These requirements are for development and testing only, not for production.
+pytest
+pylint
+coverage
+flake8
+flake8-pyproject
+black
+isort
+pytest-cov
+mypy
+gitchangelog
+mkdocs
+mkdocstrings[python]
+mkdocs-material

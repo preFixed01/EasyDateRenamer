@@ -1,0 +1,11 @@
+site_name: easy_date_renamer
+theme: material
+site_dir: 'public/'
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - easy_date_renamer: index.md
+  - reference.md
+  - how-to-guides.md
