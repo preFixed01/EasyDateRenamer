@@ -1,8 +1,11 @@
 """Fournit des fonctions utiles"""
 
 import io
+import logging
 import os
 from typing import Optional
+
+log = logging.getLogger(__name__)
 
 
 def read(*paths: str, **kwargs: Optional[str]) -> str:
@@ -31,16 +34,24 @@ def read(*paths: str, **kwargs: Optional[str]) -> str:
     return content
 
 
-def fct(a: int, b: int) -> int:
-    """_summary_
-
-    _extended_summary_
-
-    Args:
-        a (int): _description_
-        b (int): _description_
-
-    Returns:
-        int: _description_
+def validate_source_directory(source_dir: str):
     """
-    return a + b if a > b else a - b
+    Validates if the given source directory exists and is a directory.
+
+    :param source_dir: Path to the source directory.
+    :raises FileNotFoundError: If the directory does not exist or is not a directory.
+    """
+    if not os.path.isdir(source_dir):
+        error_message = f"The source directory '{source_dir}' does not exist or is not a directory."
+        raise FileNotFoundError(error_message)  # Raise an exception instead of exiting
+
+
+def ensure_destination_directory(dest_dir: str):
+    """
+    Ensures that the destination directory exists. If not, it creates it.
+
+    :param dest_dir: Path to the destination directory.
+    """
+    if not os.path.exists(dest_dir):
+        logging.info("The destination directory '%s' does not exist. Creating it...", dest_dir)
+        os.makedirs(dest_dir)
