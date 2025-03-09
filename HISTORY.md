@@ -2,17 +2,15 @@ Changelog
 =========
 
 
-1.0.1 (2025-03-09)
-------------------
-- Lancement de la version 1.0.1. [ASSE Romain]
-- Suppression d'une rules empechant la création d'une release. [ASSE
-  Romain]
-- Lancement de la version 1.0.0. [ASSE Romain]
-
-
 1.0.0 (2025-03-09)
 ------------------
-- Lancement de la version 1.0.0. [ASSE Romain]
+- Passage en version 1.0.0. [ASSE Romain]
+- Merge pull request #1 from preFixed01/devel. [preFixed01]
+
+  Merge de la devel
+- Mise à jour de la documentation. [ASSE Romain]
+- Ajout des tests unitaires. [ASSE Romain]
+- Ajout de la logique principale de l'application. [ASSE Romain]
 - Initial commit. [ASSE Romain]
 
 
